@@ -11,7 +11,8 @@ var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -40,6 +41,6 @@ app.use(function(err, req, res, next) {
 
 app.listen(7000, function () {
     console.log('Example app listening on port 7000!')
-})
+});
 
 module.exports = app;
