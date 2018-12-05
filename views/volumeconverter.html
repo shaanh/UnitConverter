@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<title>Volume Converter</title>
+<body>
+
+<h2>Volume Converter</h2>
+<p>Type a value in any field to convert the value to all other fields:</p>
+
+<p>
+    <label>Tablespoons</label>
+    <input id="inputTablespoons" type="number" placeholder="Tablespoons" oninput="volumeConverter(this.id,this.value)" onchange="volumeConverter(this.id,this.value)">
+</p>
+<p>
+    <label>Cups</label>
+    <input id="inputCups" type="number" placeholder="Cups" oninput="volumeConverter(this.id,this.value)" onchange="volumeConverter(this.id,this.value)">
+</p>
+<p>
+    <label>Pints</label>
+    <input id="inputPints" type="number" placeholder="Pints" oninput="volumeConverter(this.id,this.value)" onchange="volumeConverter(this.id,this.value)">
+</p>
+<p>
+    <label>Quarts</label>
+    <input id="inputQuarts" type="number" placeholder="Quarts" oninput="volumeConverter(this.id,this.value)" onchange="volumeConverter(this.id,this.value)">
+</p>
+<p>
+    <label>Gallons</label>
+    <input id="inputGallons" type="number" placeholder="Gallons" oninput="volumeConverter(this.id,this.value)" onchange="volumeConverter(this.id,this.value)">
+</p>
+<p>
+    <label>Milliliters</label>
+    <input id="inputMilliliters" type="number" placeholder="Milliliters" oninput="volumeConverter(this.id,this.value)" onchange="volumeConverter(this.id,this.value)">
+</p>
+<p>
+    <label>Liters</label>
+    <input id="inputLiters" type="number" placeholder="Liters" oninput="volumeConverter(this.id,this.value)" onchange="volumeConverter(this.id,this.value)">
+</p>
+
+<script>
+    function volumeConverter(unit ,valNum) {
+        valNum = parseFloat(valNum);
+
+        const inputTablespoons = document.getElementById("inputTablespoons");
+        const inputCups = document.getElementById("inputCups");
+        const inputPints = document.getElementById("inputPints");
+        const inputQuarts = document.getElementById("inputQuarts");
+        const inputGallons = document.getElementById("inputGallons");
+        const inputMilliliters = document.getElementById("inputMilliliters");
+        const inputLiters = document.getElementById("inputLiters");
+
+        if (unit === "inputTablespoons") {
+            inputCups.value=(valNum / 16).toFixed(3);
+            inputPints.value=(valNum / 32).toFixed(3);
+            inputQuarts.value=(valNum / 64).toFixed(3);
+            inputGallons.value=(valNum / 256).toFixed(4);
+            inputMilliliters.value=(valNum * 14.787).toFixed(4);
+            inputLiters.value=(valNum / 67.628).toFixed(4);
+        }
+        if (unit === "inputCups") {
+            inputTablespoons.value=(valNum * 16.2).toFixed(2);
+            inputPints.value=(valNum / 2).toFixed(2);
+            inputQuarts.value=(valNum / 4).toFixed(2);
+            inputGallons.value=(valNum / 16).toFixed(3);
+            inputMilliliters.value=(valNum * 240).toFixed(1);
+            inputLiters.value=(valNum / 4.167).toFixed(4);
+        }
+        if (unit === "inputPints") {
+            inputTablespoons.value=(valNum * 32).toFixed(1);
+            inputCups.value=(valNum * 2).toFixed(1);
+            inputQuarts.value=(valNum / 2).toFixed(2);
+            inputGallons.value=(valNum / 8).toFixed(2);
+            inputMilliliters.value=(valNum * 473.176).toFixed(4);
+            inputLiters.value=(valNum / 2.113).toFixed(4);
+        }
+        if (unit === "inputQuarts") {
+            inputTablespoons.value=(valNum * 64).toFixed(1);
+            inputCups.value=(valNum * 4).toFixed(1);
+            inputPints.value=(valNum * 2).toFixed(1);
+            inputGallons.value=(valNum / 4).toFixed(2);
+            inputMilliliters.value=(valNum * 946.353).toFixed(4);
+            inputLiters.value=(valNum / 1.057).toFixed(4);
+        }
+        if (unit === "inputGallons") {
+            inputTablespoons.value=(valNum * 256).toFixed(1);
+            inputCups.value=(valNum * 16).toFixed(1);
+            inputPints.value=(valNum * 8).toFixed(1);
+            inputQuarts.value=(valNum * 4).toFixed(1);
+            inputMilliliters.value=(valNum * 3785.412).toFixed(4);
+            inputLiters.value=(valNum * 3.785).toFixed(4);
+        }
+        if (unit === "inputMilliliters") {
+            inputTablespoons.value=(valNum / 14.787).toFixed(4);
+            inputCups.value=(valNum / 240).toFixed(4);
+            inputPints.value=(valNum / 473.176).toFixed(4);
+            inputQuarts.value=(valNum / 946.353).toFixed(4);
+            inputGallons.value=(valNum / 3785.412).toFixed(4);
+            inputLiters.value=(valNum / 1000).toFixed(4);
+        }
+        if (unit === "inputLiters") {
+            inputTablespoons.value=(valNum * 67.628).toFixed(4);
+            inputCups.value=(valNum * 4.167).toFixed(4);
+            inputPints.value=(valNum * 2.113).toFixed(4);
+            inputQuarts.value=(valNum * 1.057).toFixed(4);
+            inputGallons.value=(valNum / 3.785).toFixed(4);
+            inputMilliliters.value=(valNum * 1000).toFixed(1);
+        }
+
+    }
+</script>
+
+</body>
+</html>
