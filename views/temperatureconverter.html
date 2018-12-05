@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<title>Temperature Converter</title>
+<body>
+
+<h2>Temperature Converter</h2>
+<p>Type a value in any field to convert the value to all other fields:</p>
+
+<p>
+    <label>Celsius</label>
+    <input id="inputCelsius" type="number" placeholder="Celsius" oninput="temperatureConverter(this.id,this.value)" onchange="temperatureConverter(this.id,this.value)">
+</p>
+<p>
+    <label>Fahrenheit</label>
+    <input id="inputFahrenheit" type="number" placeholder="Fahrenheit" oninput="temperatureConverter(this.id,this.value)" onchange="temperatureConverter(this.id,this.value)">
+</p>
+<p>
+    <label>Kelvin</label>
+    <input id="inputKelvin" type="number" placeholder="Kelvin" oninput="temperatureConverter(this.id,this.value)" onchange="temperatureConverter(this.id,this.value)">
+</p>
+
+<script>
+    function temperatureConverter(unit,valNum) {
+        valNum = parseFloat(valNum);
+
+        const inputCelsius = document.getElementById("inputCelsius");
+        const inputFahrenheit = document.getElementById("inputFahrenheit");
+        const inputKelvin = document.getElementById("inputKelvin");
+
+        if (unit === "inputCelsius") {
+            inputFahrenheit.value=((valNum * 1.8) + 32).toFixed(2);
+            inputKelvin.value=(valNum + 273.15).toFixed(2);
+        }
+        if (unit === "inputFahrenheit") {
+            inputCelsius.value=((valNum - 32) / 1.8).toFixed(2);
+            inputKelvin.value=((valNum + 459.67) * 0.55555).toFixed(3);
+        }
+        if (unit === "inputKelvin") {
+            inputCelsius.value=(valNum - 273.15).toFixed(2);
+            inputFahrenheit.value=((valNum * 1.8) - 459.67).toFixed(3);
+        }
+
+    }
+</script>
+
+</body>
+</html>
