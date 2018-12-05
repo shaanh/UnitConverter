@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<title>Number Station</title>
+<body>
+
+<h2>Number Station</h2>
+<p>Type any number in the field to get a list of information related to that number:</p>
+
+<p>
+    <label>Number</label>
+    <input id="inputNumber" type="number" placeholder="Number" oninput="converter(this.value)" onchange="converter(this.value)">
+</p>
+<p>Square: <span id="outputSquare"></span></p>
+
+<script>
+    function converter(valNum) {
+        document.getElementById("outputSquare").innerHTML = valNum * valNum;
+    }
+</script>
+</body>
+</html>

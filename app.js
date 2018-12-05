@@ -11,6 +11,7 @@ var weightRouter = require('./routes/weightconverter');
 var volumeRouter = require('./routes/volumeconverter');
 var timeRouter = require('./routes/timeconverter');
 var temperatureRouter = require('./routes/temperatureconverter');
+var numberRouter = require('./routes/numberinfo');
 
 var app = express();
 
@@ -32,6 +33,7 @@ app.use('/weight', weightRouter);
 app.use('/volume', volumeRouter);
 app.use('/time', timeRouter);
 app.use('/temperature', temperatureRouter);
+app.use('/number', numberRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
