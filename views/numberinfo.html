@@ -11,10 +11,12 @@
     <input id="inputNumber" type="number" placeholder="Number" oninput="converter(this.value)" onchange="converter(this.value)">
 </p>
 <p>Square: <span id="outputSquare"></span></p>
+<p>Square Root: <span id="outputSquareRoot"></span></p>
 
 <script>
     function converter(valNum) {
         document.getElementById("outputSquare").innerHTML = valNum * valNum;
+        //document.getElementById("outputSquareRoot").innerHTML = Math.sqrt(valNum);
     }
 </script>
 </body>
