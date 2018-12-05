@@ -15,8 +15,15 @@
 
 <script>
     function converter(valNum) {
+        valNum = parseFloat(valNum);
+        //SQUARE
         document.getElementById("outputSquare").innerHTML = valNum * valNum;
-        //document.getElementById("outputSquareRoot").innerHTML = Math.sqrt(valNum);
+
+        //SQUARE ROOT
+        let root = valNum;
+        root = Math.sqrt(root);
+        document.getElementById("outputSquareRoot").innerHTML = root.toFixed(5);
+
     }
 </script>
 </body>
