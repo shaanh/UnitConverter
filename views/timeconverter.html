@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<title>Time Converter</title>
+<body>
+
+<h2>Time Converter</h2>
+<p>Type a value in any field to convert the value to all other fields:</p>
+
+<p>
+    <label>Seconds</label>
+    <input id="inputSeconds" type="number" placeholder="Seconds" oninput="timeConverter(this.id,this.value)" onchange="timeConverter(this.id,this.value)">
+</p>
+<p>
+    <label>Minutes</label>
+    <input id="inputMinutes" type="number" placeholder="Minutes" oninput="timeConverter(this.id,this.value)" onchange="timeConverter(this.id,this.value)">
+</p>
+<p>
+    <label>Hours</label>
+    <input id="inputHours" type="number" placeholder="Hours" oninput="timeConverter(this.id,this.value)" onchange="timeConverter(this.id,this.value)">
+</p>
+<p>
+    <label>Days</label>
+    <input id="inputDays" type="number" placeholder="Days" oninput="timeConverter(this.id,this.value)" onchange="timeConverter(this.id,this.value)">
+</p>
+<p>
+    <label>Weeks</label>
+    <input id="inputWeeks" type="number" placeholder="Weeks" oninput="timeConverter(this.id,this.value)" onchange="timeConverter(this.id,this.value)">
+</p>
+<p>
+    <label>Months</label>
+    <input id="inputMonths" type="number" placeholder="Months" oninput="timeConverter(this.id,this.value)" onchange="timeConverter(this.id,this.value)">
+</p>
+<p>
+    <label>Years</label>
+    <input id="inputYears" type="number" placeholder="Years" oninput="timeConverter(this.id,this.value)" onchange="timeConverter(this.id,this.value)">
+</p>
+<p>
+    <label>Decades</label>
+    <input id="inputDecades" type="number" placeholder="Decades" oninput="timeConverter(this.id,this.value)" onchange="timeConverter(this.id,this.value)">
+</p>
+<p>
+    <label>Centuries</label>
+    <input id="inputCenturies" type="number" placeholder="Centuries" oninput="timeConverter(this.id,this.value)" onchange="timeConverter(this.id,this.value)">
+</p>
+
+<script>
+    function timeConverter(unit,valNum) {
+        valNum = parseFloat(valNum);
+
+        const inputSeconds = document.getElementById("inputSeconds");
+        const inputMinutes = document.getElementById("inputMinutes");
+        const inputHours = document.getElementById("inputHours");
+        const inputDays = document.getElementById("inputDays");
+        const inputWeeks = document.getElementById("inputWeeks");
+        const inputMonths = document.getElementById("inputMonths");
+        const inputYears = document.getElementById("inputYears");
+        const inputDecades = document.getElementById("inputDecades");
+        const inputCenturies = document.getElementById("inputCenturies");
+
+
+        if (unit === "inputSeconds") {
+            inputMinutes.value=(valNum / 60).toFixed(3);
+            inputHours.value=(valNum / 3600).toFixed(5);
+            inputDays.value=(valNum / 86400).toFixed(6);
+            inputWeeks.value=(valNum / 604800).toFixed(7);
+            inputMonths.value=(valNum / 2592000).toFixed(8);
+            inputYears.value=(valNum / 31536000).toFixed(9);
+            inputDecades.value=(valNum / 315569520).toFixed(10);
+            inputCenturies.value=(valNum / 3155695200).toFixed(11);
+        }
+        if (unit === "inputMinutes") {
+            inputSeconds.value=(valNum * 60).toFixed(1);
+            inputHours.value=(valNum / 60).toFixed(3);
+            inputDays.value=(valNum / 1440).toFixed(5);
+            inputWeeks.value=(valNum / 10080).toFixed(6);
+            inputMonths.value=(valNum / 43800.048).toFixed(6);
+            inputYears.value=(valNum / 525600).toFixed(7);
+            inputDecades.value=(valNum / 5259492).toFixed(8);
+            inputCenturies.value=(valNum / 52594920).toFixed(9);
+        }
+        if (unit === "inputHours") {
+            inputSeconds.value=(valNum * 3600).toFixed(1);
+            inputMinutes.value=(valNum * 60).toFixed(1);
+            inputDays.value=(valNum / 24).toFixed(3);
+            inputWeeks.value=(valNum / 168).toFixed(4);
+            inputMonths.value=(valNum / 730.001).toFixed(4);
+            inputYears.value=(valNum / 8760).toFixed(5);
+            inputDecades.value=(valNum / 87600).toFixed(6);
+            inputCenturies.value=(valNum / 876000).toFixed(7);
+        }
+        if (unit === "inputDays") {
+            inputSeconds.value=(valNum * 86400).toFixed(1);
+            inputMinutes.value=(valNum * 1440).toFixed(1);
+            inputHours.value=(valNum * 24).toFixed(1);
+            inputWeeks.value=(valNum / 7).toFixed(2);
+            inputMonths.value=(valNum / 30.4167).toFixed(3);
+            inputYears.value=(valNum / 365).toFixed(4);
+            inputDecades.value=(valNum / 3650).toFixed(5);
+            inputCenturies.value=(valNum / 36500).toFixed(6);
+        }
+        if (unit === "inputWeeks") {
+            inputSeconds.value=(valNum * 604800).toFixed(1);
+            inputMinutes.value=(valNum * 10080).toFixed(1);
+            inputHours.value=(valNum * 168).toFixed(1);
+            inputDays.value=(valNum * 7).toFixed(1);
+            inputMonths.value=(valNum / 4.345).toFixed(2);
+            inputYears.value=(valNum / 52.143).toFixed(3);
+            inputDecades.value=(valNum / 521.429).toFixed(4);
+            inputCenturies.value=(valNum / 5214.286).toFixed(5);
+        }
+        if (unit === "inputMonths") {
+            inputSeconds.value=(valNum * 2592000).toFixed(1);
+            inputMinutes.value=(valNum * 43800.048).toFixed(1);
+            inputHours.value=(valNum * 730.001).toFixed(1);
+            inputDays.value=(valNum * 30.4167).toFixed(1);
+            inputWeeks.value=(valNum * 4.345).toFixed(1);
+            inputYears.value=(valNum / 12).toFixed(3);
+            inputDecades.value=(valNum / 120).toFixed(4);
+            inputCenturies.value=(valNum / 1200).toFixed(5);
+        }
+        if (unit === "inputYears") {
+            inputSeconds.value=(valNum * 31536000).toFixed(1);
+            inputMinutes.value=(valNum * 525600).toFixed(1);
+            inputHours.value=(valNum * 8760).toFixed(1);
+            inputDays.value=(valNum * 365).toFixed(1);
+            inputWeeks.value=(valNum * 52.143).toFixed(1);
+            inputMonths.value=(valNum * 12).toFixed(1);
+            inputDecades.value=(valNum / 10).toFixed(3);
+            inputCenturies.value=(valNum / 100).toFixed(4);
+        }
+        if (unit === "inputDecades") {
+            inputSeconds.value=(valNum * 315569520).toFixed(1);
+            inputMinutes.value=(valNum * 5259492).toFixed(1);
+            inputHours.value=(valNum * 87600).toFixed(1);
+            inputDays.value=(valNum * 3650).toFixed(1);
+            inputWeeks.value=(valNum * 521.429).toFixed(1);
+            inputMonths.value=(valNum * 120).toFixed(1);
+            inputYears.value=(valNum * 10).toFixed(1);
+            inputCenturies.value=(valNum / 10).toFixed(3);
+        }
+        if (unit === "inputCenturies") {
+            inputSeconds.value=(valNum * 3155695200).toFixed(1);
+            inputMinutes.value=(valNum * 52594920).toFixed(1);
+            inputHours.value=(valNum * 876000).toFixed(1);
+            inputDays.value=(valNum * 36500).toFixed(1);
+            inputWeeks.value=(valNum * 5214.286).toFixed(1);
+            inputMonths.value=(valNum * 1200).toFixed(1);
+            inputYears.value=(valNum * 100).toFixed(1);
+            inputDecades.value=(valNum * 10).toFixed(1);
+        }
+
+    }
+</script>
+
+</body>
+</html>
