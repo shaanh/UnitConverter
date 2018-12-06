@@ -13,6 +13,8 @@
 <p>Square: <span id="outputSquare"></span></p>
 <p>Square Root: <span id="outputSquareRoot"></span></p>
 <p>Prime or Composite: <span id="outputPrimeOrComposite"></span></p>
+<p>Factors: <span id="outputFactors"></span></p>
+
 
 <script>
     function converter(valNum) {
@@ -62,9 +64,28 @@
         }
 
         //FACTORS
+        let num = valNum;
+        let string = "";
+        let counter = 1;
 
-        //USE A STRING TO HOLD THE NUMBERS: APPEND EACH NUMBER TO THE STRING, SEPARATED BY COMMAS
-
+        if (num === 1) {
+            string += num;
+            document.getElementById("outputFactors").innerHTML = string;
+        } else {
+            while (counter <= num / 2) {
+                if (num % counter === 0) {
+                    if (string !== "") {
+                        string += ", ";
+                    }
+                    string += counter;
+                }
+                counter++;
+            }
+            if (string !== "") {
+                string += ", " + num;
+            }
+            document.getElementById("outputFactors").innerHTML = string;
+        }
     }
 </script>
 </body>
