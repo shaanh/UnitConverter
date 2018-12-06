@@ -12,10 +12,12 @@
 </p>
 <p>Square: <span id="outputSquare"></span></p>
 <p>Square Root: <span id="outputSquareRoot"></span></p>
+<p>Prime or Composite: <span id="outputPrimeOrComposite"></span></p>
 
 <script>
     function converter(valNum) {
         valNum = parseFloat(valNum);
+
         //SQUARE
         document.getElementById("outputSquare").innerHTML = valNum * valNum;
 
@@ -23,6 +25,45 @@
         let root = valNum;
         root = Math.sqrt(root);
         document.getElementById("outputSquareRoot").innerHTML = root.toFixed(5);
+
+        //PRIME OR COMPOSITE
+
+        let divisor = 3;
+        let number = valNum;
+        number = Math.abs(number);
+        let checker = false;
+
+        if (number === 0 || number === 1) {
+            document.getElementById("outputPrimeOrComposite").innerHTML = "NEITHER!";
+        } else {
+
+            if (number === 2) {
+                checker = false;
+            } else
+
+            if (number % 2 === 0) {
+                checker = true;
+            } else {
+                while (divisor <= Math.sqrt(number)) {
+                    if (number % divisor === 0) {
+                        checker = true;
+                        break;
+                    }
+                    divisor += 2;
+                }
+            }
+
+            if (checker) {
+                document.getElementById("outputPrimeOrComposite").innerHTML = "COMPOSITE!";
+            } else {
+                document.getElementById("outputPrimeOrComposite").innerHTML = "PRIME!";
+            }
+
+        }
+
+        //FACTORS
+
+        //USE A STRING TO HOLD THE NUMBERS: APPEND EACH NUMBER TO THE STRING, SEPARATED BY COMMAS
 
     }
 </script>
