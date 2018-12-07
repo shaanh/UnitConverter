@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html>
-<title>Number Station</title>
+<html lang="">
+<head>
+    <title>Numbers N' Units!</title>
+    <link rel='stylesheet' href='/public/stylesheets/stylenumberstation.css' />
+</head>
 <body>
-
 <h2>Number Station</h2>
 <p>Type any number in the field to get a list of information related to that number:</p>
-
+<br>
 <p>
     <label>Number</label>
     <input id="inputNumber" type="number" placeholder="Number" oninput="converter(this.value)" onchange="converter(this.value)">
 </p>
-
+<br>
 <p>Number Doubled: <span id="outputDoubled"></span></p>
 <p>Number Halved: <span id="outputHalved"></span></p>
 <p>Square: <span id="outputSquare"></span></p>
@@ -18,7 +20,7 @@
 <p>Prime or Composite: <span id="outputPrimeOrComposite"></span></p>
 <p>Factors: <span id="outputFactors"></span></p>
 <br><br>
-<a href="/" class="btn">Home</a>
+<a href="/" class="btn"><strong>Home</strong></a>
 
 <script>
     function converter(valNum) {
