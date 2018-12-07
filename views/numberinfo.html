@@ -10,6 +10,9 @@
     <label>Number</label>
     <input id="inputNumber" type="number" placeholder="Number" oninput="converter(this.value)" onchange="converter(this.value)">
 </p>
+
+<p>Number Doubled: <span id="outputDoubled"></span></p>
+<p>Number Halved: <span id="outputHalved"></span></p>
 <p>Square: <span id="outputSquare"></span></p>
 <p>Square Root: <span id="outputSquareRoot"></span></p>
 <p>Prime or Composite: <span id="outputPrimeOrComposite"></span></p>
@@ -19,6 +22,12 @@
 <script>
     function converter(valNum) {
         valNum = parseFloat(valNum);
+
+        //DOUBLED
+        document.getElementById("outputDoubled").innerHTML = valNum * 2;
+
+        //HALVED
+        document.getElementById("outputHalved").innerHTML = (valNum / 2).toFixed(2);
 
         //SQUARE
         document.getElementById("outputSquare").innerHTML = valNum * valNum;
