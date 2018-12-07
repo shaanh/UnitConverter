@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<title>Currency Converter</title>
+<body>
+
+<h2>Currency Converter</h2>
+<p>Type a value in any field to convert the value to all other fields:</p>
+
+<p>
+    <label>US Dollar</label>
+    <input id="inputUS" type="number" placeholder="US Dollar" oninput="currencyConverter(this.id,this.value)" onchange="currencyConverter(this.id,this.value)">
+</p>
+<p>
+    <label>Canadian Dollar</label>
+    <input id="inputCan" type="number" placeholder="Canadian Dollar" oninput="currencyConverter(this.id,this.value)" onchange="currencyConverter(this.id,this.value)">
+</p>
+<p>
+    <label>Euro</label>
+    <input id="inputEuro" type="number" placeholder="Euro" oninput="currencyConverter(this.id,this.value)" onchange="currencyConverter(this.id,this.value)">
+</p>
+<p>
+    <label>British Pound</label>
+    <input id="inputPound" type="number" placeholder="British Pound" oninput="currencyConverter(this.id,this.value)" onchange="currencyConverter(this.id,this.value)">
+</p>
+<p>
+    <label>Indian Rupee</label>
+    <input id="inputRupee" type="number" placeholder="Indian Rupee" oninput="currencyConverter(this.id,this.value)" onchange="currencyConverter(this.id,this.value)">
+</p>
+<p>
+    <label>Australian Dollar</label>
+    <input id="inputAus" type="number" placeholder="Australian Dollar" oninput="currencyConverter(this.id,this.value)" onchange="currencyConverter(this.id,this.value)">
+</p>
+<p>
+    <label>Chinese Yuan</label>
+    <input id="inputYuan" type="number" placeholder="Chinese Yuan" oninput="currencyConverter(this.id,this.value)" onchange="currencyConverter(this.id,this.value)">
+</p>
+<p>
+    <label>Japanese Yen</label>
+    <input id="inputYen" type="number" placeholder="Japanese Yen" oninput="currencyConverter(this.id,this.value)" onchange="currencyConverter(this.id,this.value)">
+</p>
+<p>
+    <label>Swiss Franc</label>
+    <input id="inputFranc" type="number" placeholder="Swiss Franc" oninput="currencyConverter(this.id,this.value)" onchange="currencyConverter(this.id,this.value)">
+</p>
+<p>
+    <label>Mexican Peso</label>
+    <input id="inputPeso" type="number" placeholder="Mexican Peso" oninput="currencyConverter(this.id,this.value)" onchange="currencyConverter(this.id,this.value)">
+</p>
+
+<script>
+    function currencyConverter(unit,valNum) {
+        valNum = parseFloat(valNum);
+
+        const inputUS = document.getElementById("inputUS");
+        const inputCan = document.getElementById("inputCan");
+        const inputEuro = document.getElementById("inputEuro");
+        const inputPound = document.getElementById("inputPound");
+        const inputRupee = document.getElementById("inputRupee");
+        const inputAus = document.getElementById("inputAus");
+        const inputYuan = document.getElementById("inputYuan");
+        const inputYen = document.getElementById("inputYen");
+        const inputFranc = document.getElementById("inputFranc");
+        const inputPeso = document.getElementById("inputPeso");
+
+        if (unit === "inputUS") {
+            inputCan.value=(valNum * 1.339).toFixed(4);
+            inputEuro.value=(valNum * 0.879).toFixed(4);
+            inputPound.value=(valNum * 0.782).toFixed(4);
+            inputRupee.value=(valNum * 70.770).toFixed(4);
+            inputAus.value=(valNum * 1.383).toFixed(4);
+            inputYuan.value=(valNum * 6.883).toFixed(4);
+            inputYen.value=(valNum * 112.734).toFixed(4);
+            inputFranc.value=(valNum * 0.993).toFixed(4);
+            inputPeso.value=(valNum * 20.359).toFixed(4);
+        }
+        if (unit === "inputCan") {
+            inputUS.value=(valNum / 1.339).toFixed(4);
+            inputEuro.value=(valNum * 0.656).toFixed(4);
+            inputPound.value=(valNum * 0.584).toFixed(4);
+            inputRupee.value=(valNum * 52.858).toFixed(4);
+            inputAus.value=(valNum * 1.033).toFixed(4);
+            inputYuan.value=(valNum * 5.140).toFixed(4);
+            inputYen.value=(valNum * 84.186).toFixed(4);
+            inputFranc.value=(valNum * 0.742).toFixed(4);
+            inputPeso.value=(valNum * 15.201).toFixed(4);
+        }
+        if (unit === "inputEuro") {
+            inputUS.value=(valNum / 0.879).toFixed(4);
+            inputCan.value=(valNum / 0.656).toFixed(4);
+            inputPound.value=(valNum * 0.890).toFixed(4);
+            inputRupee.value=(valNum * 80.520).toFixed(4);
+            inputAus.value=(valNum * 1.573).toFixed(4);
+            inputYuan.value=(valNum * 7.829).toFixed(4);
+            inputYen.value=(valNum * 128.242).toFixed(4);
+            inputFranc.value=(valNum * 1.129).toFixed(4);
+            inputPeso.value=(valNum * 23.155).toFixed(4);
+        }
+        if (unit === "inputPound") {
+            inputUS.value=(valNum / 0.782).toFixed(4);
+            inputCan.value=(valNum / 0.584).toFixed(4);
+            inputEuro.value=(valNum / 0.890).toFixed(4);
+            inputRupee.value=(valNum * 90.476).toFixed(4);
+            inputAus.value=(valNum * 1.768).toFixed(4);
+            inputYuan.value=(valNum * 8.795).toFixed(4);
+            inputYen.value=(valNum * 144.043).toFixed(4);
+            inputFranc.value=(valNum * 1.269).toFixed(4);
+            inputPeso.value=(valNum * 26.014).toFixed(4);
+        }
+        if (unit === "inputRupee") {
+            inputUS.value=(valNum / 70.770).toFixed(4);
+            inputCan.value=(valNum / 52.858).toFixed(4);
+            inputEuro.value=(valNum / 80.520).toFixed(4);
+            inputPound.value=(valNum / 90.476).toFixed(4);
+            inputAus.value=(valNum / 51.181).toFixed(4);
+            inputYuan.value=(valNum / 10.282).toFixed(4);
+            inputYen.value=(valNum * 1.592).toFixed(4);
+            inputFranc.value=(valNum / 71.308).toFixed(4);
+            inputPeso.value=(valNum / 3.477).toFixed(4);
+        }
+        if (unit === "inputAus") {
+            inputUS.value=(valNum / 1.383).toFixed(4);
+            inputCan.value=(valNum / 1.033).toFixed(4);
+            inputEuro.value=(valNum / 1.573).toFixed(4);
+            inputPound.value=(valNum / 1.768).toFixed(4);
+            inputRupee.value=(valNum * 51.181).toFixed(4);
+            inputYuan.value=(valNum * 4.975).toFixed(4);
+            inputYen.value=(valNum * 81.479).toFixed(4);
+            inputFranc.value=(valNum * 0.718).toFixed(4);
+            inputPeso.value=(valNum * 14.714).toFixed(4);
+        }
+        if (unit === "inputYuan") {
+            inputUS.value=(valNum / 6.883).toFixed(4);
+            inputCan.value=(valNum / 5.140).toFixed(4);
+            inputEuro.value=(valNum / 7.829).toFixed(4);
+            inputPound.value=(valNum / 8.795).toFixed(4);
+            inputRupee.value=(valNum * 10.282).toFixed(4);
+            inputAus.value=(valNum / 4.795).toFixed(4);
+            inputYen.value=(valNum * 16.371).toFixed(4);
+            inputFranc.value=(valNum * 0.144).toFixed(4);
+            inputPeso.value=(valNum * 2.957).toFixed(4);
+        }
+        if (unit === "inputYen") {
+            inputUS.value=(valNum / 112.734).toFixed(4);
+            inputCan.value=(valNum / 84.186).toFixed(4);
+            inputEuro.value=(valNum / 128.242).toFixed(4);
+            inputPound.value=(valNum / 144.043).toFixed(4);
+            inputRupee.value=(valNum / 1.592).toFixed(4);
+            inputAus.value=(valNum / 81.479).toFixed(4);
+            inputYuan.value=(valNum / 16.371).toFixed(4);
+            inputFranc.value=(valNum / 113.552).toFixed(4);
+            inputPeso.value=(valNum * 0.181).toFixed(4);
+        }
+        if (unit === "inputFranc") {
+            inputUS.value=(valNum / 0.993).toFixed(4);
+            inputCan.value=(valNum / 0.742).toFixed(4);
+            inputEuro.value=(valNum / 1.129).toFixed(4);
+            inputPound.value=(valNum / 1.269).toFixed(4);
+            inputRupee.value=(valNum * 71.308).toFixed(4);
+            inputAus.value=(valNum / 0.718).toFixed(4);
+            inputYuan.value=(valNum / 0.144).toFixed(4);
+            inputYen.value=(valNum * 113.552).toFixed(4);
+            inputPeso.value=(valNum * 20.509).toFixed(4);
+        }
+        if (unit === "inputPeso") {
+            inputUS.value=(valNum / 20.359).toFixed(4);
+            inputCan.value=(valNum / 15.201).toFixed(4);
+            inputEuro.value=(valNum / 23.155).toFixed(4);
+            inputPound.value=(valNum / 26.014).toFixed(4);
+            inputRupee.value=(valNum * 3.477).toFixed(4);
+            inputAus.value=(valNum / 14.714).toFixed(4);
+            inputYuan.value=(valNum / 2.957).toFixed(4);
+            inputYen.value=(valNum / 0.181).toFixed(4);
+            inputFranc.value=(valNum / 20.509).toFixed(4);
+        }
+
+    }
+</script>
+
+</body>
+</html>
