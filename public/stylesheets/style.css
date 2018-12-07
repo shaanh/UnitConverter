@@ -4,6 +4,29 @@ body {
   text-align:center;
   background-color: aquamarine;
 }
+img.left-image{
+  position:absolute;
+  left:40px;
+  top:40px;
+}
+
+img.right-image{
+  position:absolute;
+  right:40px;
+  top:40px;
+}
+
+img.bottom-left-image{
+  position:absolute;
+  left:25px;
+  bottom:25px;
+}
+
+img.bottom-right-image{
+  position:absolute;
+  right:60px;
+  bottom:60px;
+}
 
 a {
   color: #00B7FF;
