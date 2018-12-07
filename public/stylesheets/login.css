@@ -1,0 +1,26 @@
+
+body {
+    background-color: whitesmoke;
+}
+
+
+h1 {
+    color: black;
+    font-size: 75px;
+    text-align: center;
+    font-family: Cambria, serif;
+    /*word-spacing: 20px;*/
+}
+
+
+.signin {
+    background-color: #018185;
+    font-size: 35px;
+    color: #D7D5D9;
+    border-color: #018185;
+    border-radius: 8px;
+    position: absolute;
+    left: 575px;
+    top: 400px;
+    font-family: Cambria, serif;
+}

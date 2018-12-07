@@ -4,6 +4,21 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+var firebase = require("firebase-admin");
+
+// Initialize Firebase
+var config = {
+    apiKey: "AIzaSyALnrPUS0DlWb7bgezdHEppgblrUpN03bQ",
+    authDomain: "numbersnunits.firebaseapp.com",
+    databaseURL: "https://numbersnunits.firebaseio.com",
+    projectId: "numbersnunits",
+    storageBucket: "numbersnunits.appspot.com",
+    messagingSenderId: "669587148335"
+};
+
+firebase.initializeApp(config);
+
+var loginRouter = require('./routes/login');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var lengthRouter = require('./routes/lengthconverter');
@@ -27,7 +42,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
+app.use('/', loginRouter);
+app.use('/home', indexRouter);
 app.use('/users', usersRouter);
 app.use('/length', lengthRouter);
 app.use('/weight', weightRouter);
