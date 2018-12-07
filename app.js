@@ -7,6 +7,7 @@ var logger = require('morgan');
 var firebase = require("firebase-admin");
 
 // Initialize Firebase
+
 var config = {
     apiKey: "AIzaSyALnrPUS0DlWb7bgezdHEppgblrUpN03bQ",
     authDomain: "numbersnunits.firebaseapp.com",
@@ -16,7 +17,7 @@ var config = {
     messagingSenderId: "669587148335"
 };
 
-firebase.initializeApp(config);
+//firebase.initializeApp(config);
 
 var loginRouter = require('./routes/login');
 var indexRouter = require('./routes/index');
