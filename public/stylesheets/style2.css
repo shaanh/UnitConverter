@@ -2,6 +2,7 @@ body {
     padding: 50px;
     font: 18px "Lucida Grande", Calibri, Cambria, sans-serif;
     text-align:center;
+    background-color: lightgray;
 }
 
 a {
