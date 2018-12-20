@@ -1,5 +1,5 @@
 # Numbers N' Units!
-CS 252 Lab 6 Node.js Application
+
 
 # Project Description
 This is a web application that will allow users to convert units across the metric system and imperial system. For example, converting from celsius to fahrenheit, inches to meters, liters to gallons, etc.
